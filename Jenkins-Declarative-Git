@@ -12,12 +12,9 @@ pipeline{
                 git credentialsId: 'github', url: 'https://github.com/ayb112/myweb'
             }
         }
-        stage("Maven Build"){
-                def mvnHome =  tool name: 'maven-3', type: 'maven'   
-                
+        stage("Maven Build"){      
             steps{
-                sh "${mvnHome}/bin/mvn package"
-                //sh "mvn clean package"
+                sh "mvn clean package"
                 sh "mv target/*.war target/myweb.war"
             }
         }
