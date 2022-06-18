@@ -22,7 +22,7 @@ pipeline{
             steps{
                 sshagent(['tomcat-new']) {
                 sh """
-                        scp -o StrictHostKeyChecking=no target/myweb.war  ayoub@localhost:/opt/tomcat8/webapps/
+                        scp -o StrictHostKeyChecking=no target/myweb.war /opt/tomcat8/webapps/
 
                         ssh /opt/tomcat8/bin/shutdown.sh
 
