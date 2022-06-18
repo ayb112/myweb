@@ -24,9 +24,9 @@ pipeline{
                 sh """
                         scp -o StrictHostKeyChecking=no target/myweb.war  ayoub@localhost:/opt/tomcat8/webapps/
 
-                        ssh ayoub@localhost /opt/tomcat8/bin/shutdown.sh
+                        ssh /opt/tomcat8/bin/shutdown.sh
 
-                        ssh ayoub@localhost /opt/tomcat8/bin/startup.sh
+                        ssh /opt/tomcat8/bin/startup.sh
                 
                 """
             }
